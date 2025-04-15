@@ -63,12 +63,24 @@ def get_extensions():
     return extensions
 
 
+# setup(
+#     version=get_version(),
+#     data_files=get_data_files(),
+#     packages=find_packages(),
+#     scripts=["pronsole.py", "pronterface.py", "plater.py", "printcore.py"],
+#     ext_modules=get_extensions(),
+#     install_requires=get_install_requires(),
+#     zip_safe=False,
+# )
+
+# modified setup.py for Printrun Lite with only printcore and some utils
 setup(
+    name="printrun-lite",
     version=get_version(),
-    data_files=get_data_files(),
-    packages=find_packages(),
-    scripts=["pronsole.py", "pronterface.py", "plater.py", "printcore.py"],
-    ext_modules=get_extensions(),
+    packages=["printrun"],
+    package_dir={"printrun": "printrun"},
+    py_modules=["printrun.printcore", "printrun.utils", "printrun.gcoder"],
+    scripts=["printcore.py"],
     install_requires=get_install_requires(),
     zip_safe=False,
 )
