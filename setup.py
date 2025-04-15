@@ -79,7 +79,9 @@ setup(
     version=get_version(),
     packages=["printrun"],
     package_dir={"printrun": "printrun"},
-    py_modules=["printrun.printcore", "printrun.utils", "printrun.gcoder"],
+    # printcore, utils, gcoder, plugins, gcoder_line.pyx
+    py_modules=["printrun.printcore", "printrun.utils", "printrun.gcoder", 
+                "printrun.gcoder_line", "printrun.plugins"],
     scripts=["printcore.py"],
     install_requires=get_install_requires(),
     zip_safe=False,
