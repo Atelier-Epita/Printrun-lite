@@ -322,7 +322,7 @@ class printcore():
                 continue
             if line.startswith(tuple(self.greetings)) or line.startswith('ok'):
                 self.clear = True
-            if line.startswith('ok') and "T:" in line:
+            if "T:" in line: # TOFIX: not necessarly starts with "ok"
                 self._callback('temp', line)
             elif line.startswith('Error'):
                 self._logError(line)
